@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITD.Log</name>
+    </assembly>
+    <members>
+        <member name="T:ITD.Log.ManejadorLog">
+            <summary>
+            Clase estática que maneja el log de la aplicación
+            </summary>
+        </member>
+        <member name="P:ITD.Log.ManejadorLog.Log">
+            <summary>
+            Log de la aplicación. ver documentacion de log4Net Inerfaz ILog
+            </summary>
+        </member>
+        <member name="M:ITD.Log.ManejadorLog.ArchivoLog">
+            <summary>
+            Devuelve la ruta del archivo de Log 
+            </summary>
+            <returns>Ruta del archivo donde estará el log</returns>
+        </member>
+        <member name="M:ITD.Log.ManejadorLog.InicializarLog(System.String)">
+            <summary>
+            Inicializa el log de la aplicación
+            </summary>
+            <param name="fuente">Nombre del origen del error. Comunmente es el nombre de la aplicación.</param>
+        </member>
+        <member name="M:ITD.Log.ManejadorLog.CrearLog(System.String)">
+            <summary>
+            Crea un nuevo log para diferenciar entradas al log distintas al de la aplicación general
+            </summary>
+            <param name="fuente">Nombre del origen del error.</param>
+        </member>
+        <member name="T:ITD.Log.TipoError">
+            <summary>
+            Indica cual es el tipo de error generado
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.Otro">
+            <summary>
+            Otro error desconocido
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.IndiceCon">
+            <summary>
+            Indice de conexion no válido. Producido por el WCF.
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.Token">
+            <summary>
+            Token inválido. producido por WCF.
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.TimeOut">
+            <summary>
+            Error de tiempo de espera.
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.ComunicacionWcf">
+            <summary>
+            Error de comunicacion con WCF
+            </summary>
+        </member>
+        <member name="F:ITD.Log.TipoError.OtroWcf">
+            <summary>
+            Otro error de WCF.
+            </summary>
+        </member>
+        <member name="T:ITD.Log.ITDError">
+            <summary>
+            Maneja la información de los errores
+            </summary>
+        </member>
+        <member name="P:ITD.Log.ITDError.Mensaje">
+            <summary>
+            Mensaje de error
+            </summary>
+        </member>
+        <member name="P:ITD.Log.ITDError.Numero">
+            <summary>
+            Numero del error. Si es un error de SQL debiera ir el numero de error generado en SQL.
+            </summary>
+        </member>
+        <member name="P:ITD.Log.ITDError.Excepcion">
+            <summary>
+            Es el texto de la escepción producida (lo que arroja el metodo ToString de la excepción)
+            </summary>
+        </member>
+        <member name="P:ITD.Log.ITDError.Ex">
+            <summary>
+            Es la excepcion producida (de poder obtenerla)
+            </summary>
+        </member>
+    </members>
+</doc>

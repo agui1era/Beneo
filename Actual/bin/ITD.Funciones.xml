@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITD.Funciones</name>
+    </assembly>
+    <members>
+        <member name="T:ITD.Funciones.FuncGen">
+            <summary>
+            Clase estática que contiene variadas funciones de uso general
+            </summary>
+        </member>
+        <member name="P:ITD.Funciones.FuncGen.FormatoRegional">
+            <summary>
+            Devuelve o establece la configuración del formato regional a usarse en una aplicación. por defecto esta es "es-CL".
+            Esta propiedad se puede utilizar para dar formato a las fechas, numeros, etc.
+            <seealso cref="T:System.Globalization.CultureInfo"/>
+            </summary>
+            <example>
+            En este ejemplo devuelve un string de la fecha de hoy de acuerdo al formato regional de la aplicación:
+            <code>
+            DateTime.Today.ToString("d", FuncGen.FormatoRegional);
+            </code>
+            En este ejemplo Se establece la configuración regional a estados unidos.
+            <code>
+            FuncGen.FormatoRegional = new System.Globalization.CultureInfo("en-US", true);
+            </code>
+            </example>
+        </member>
+        <member name="P:ITD.Funciones.FuncGen.FormatoLocalFecha">
+            <summary>
+            Devuelve el formato de la fecha que usa la máquina local donde se ejecuta la aplicación.
+            </summary>
+        </member>
+        <member name="P:ITD.Funciones.FuncGen.SeparadorDecimal">
+            <summary>
+            Devuelve el separador decimal que usa la máquina local donde se ejecuta la aplicación.
+            </summary>
+        </member>
+        <member name="P:ITD.Funciones.FuncGen.SeparadorMiles">
+            <summary>
+            Devuelve el separador de miles que usa la máquina local donde se ejecuta la aplicación.
+            </summary>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ObjetoAString(System.Object)">
+            <summary>
+            Esta función crea una representación en string de un objeto. El string es una cadena que represante el objeto serializado a XML.
+            </summary>
+            <remarks>
+            Para poder convertir a string el objeto debe ser serializable, es decir, debe incluir el atributo <c>[Serializable]</c>, y cada propiedad que devuelva un objeto tambien debe ser serializable. 
+            Ademas no debe incluir referencias cíclicas.
+            La operación inversa a esta función es StringAObjeto
+            </remarks>
+            <param name="obj">El objeto a serializar.</param>
+            <returns>Cadena que representa al objeto serializado.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.StringAObjeto``1(System.String)">
+            <summary>
+            Devuelve una instancia del objeto de tipo T que representa la cadena strObj.
+            </summary>
+            <remarks>Es la operación inversa al metodo ObjetoAString</remarks>
+            <typeparam name="T">Es el tipo de objeto a devolver</typeparam>
+            <param name="strObj">Es la cadena </param>
+            <returns>Instancia del objeto que representa la cadena strObj</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ObjetoAArchivo(System.Object,System.String)">
+            <summary>
+            Esta función crea una representación en string de un objeto y lo vuelca a un archivo. El string es una cadena que represante el objeto serializado a XML.
+            </summary>
+            <remarks>
+            Para poder convertir a string el objeto debe ser serializable, es decir, debe incluir el atributo <c>[Serializable]</c>, y cada propiedad que devuelva un objeto tambien debe ser serializable. 
+            Ademas no debe incluir referencias cíclicas.
+            La operación inversa a esta función es StringAArchivo
+            </remarks>
+            <param name="obj">El objeto a serializar.</param>
+            <param name="strArchivo">Ruta del archivo a crear.</param>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ArchivoAObjeto``1(System.String)">
+            <summary>
+            Devuelve una instancia del objeto de tipo T que representa el archivo strArchivo.
+            </summary>
+            <remarks>Es la operación inversa al metodo ObjetoAArchivo</remarks>
+            <typeparam name="T">Es el tipo de objeto a devolver</typeparam>
+            <param name="strArchivo">Es la cadena </param>
+            <returns>Instancia del objeto que representa el archivo strArchivo</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.CopiarObjeto``1(``0)">
+            <summary>
+            Crea una copia del objeto.
+            </summary>
+            <remarks>
+            Para poder copiar un objeto debe ser serializable, es decir, debe incluir el atributo <c>[Serializable]</c>, y cada propiedad que devuelva un objeto tambien debe ser serializable. 
+            Ademas no debe incluir referencias cíclicas.
+            </remarks>
+            <typeparam name="T">Tipo de objeto a copiar</typeparam>
+            <param name="objOrigen">instancia del objeto a copiar</param>
+            <returns>Copia del objeto</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.EsEmailValido(System.String)">
+            <summary>
+            Valida si una cadena representa una dirección de E-mail válida.
+            </summary>
+            <param name="email">cadena a validar</param>
+            <returns>Retorna True si es un e-mail válido</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.EsEmailMultipleValido(System.String)">
+            <summary>
+            Valida si una cadena representa una o varias direcciones de E-mail válidas.
+            </summary>
+            <remarks>
+            Los e-mails deben estar separados por punto y coma.
+            </remarks>
+            <param name="emails">cadena a validar</param>
+            <returns>Retorna True si es válido</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.FormatearRut(System.Int32,System.Char)">
+            <summary>
+            Devuelve una cadena que representa el RUT con el formato ##.###.###-#
+            </summary>
+            <param name="rut">Es la parte entera del RUT a formatear</param>
+            <param name="dv">Digito verificador del RUT</param>
+            <returns>Cadena formateada</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ValidarRut(System.Int32,System.Char)">
+            <summary>
+            Valida que un digito verificador corresponda al RUT dado.
+            </summary>
+            <param name="rut">Parte entera del RUT a validar</param>
+            <param name="dv">Digito verificador a validar</param>
+            <returns>Retorna True si el digito verificador corresponde al rut dado.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ValidarRut(System.String)">
+            <summary>
+            Valida que un RUT sea un rut válido
+            </summary>
+            <param name="rut">Cadena que contiene el RUT a validar. Esta cadena puede venir formateada o no (con o sin separador de miles y/o guión.</param>
+            <returns>Retorna True si es un RUT válido.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ObtenerDigitoVerificador(System.Int32)">
+            <summary>
+            Devuelve el digito verificador de la parte numérica de un RUT.
+            </summary>
+            <param name="rut">RUT a obtener el digito verificador.</param>
+            <returns>Digito verificador que representa al RUT dado.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.FileToByte(System.String,System.String@)">
+            <summary>
+            Convierte un archivo a un arreglo de bytes.
+            </summary>
+            <remarks>
+            Es la operación inversa a ByteToFile.
+            </remarks>
+            <param name="path">Ruta del archivo a convertir</param>
+            <param name="error">Cadena con la descripción del error que hubo al convertir el archivo (Si lo hubo).</param>
+            <returns>Arreglo de bytes que representa al archivo.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ByteToFile(System.Byte[],System.String,System.String@)">
+            <summary>
+            Convierte un arreglo de bytes a un archivo.
+            </summary>
+            <remarks>
+            Es la operación inversa a FileToByte.
+            </remarks>
+            <param name="arreglo">Arreglo de bytes a convertir.</param>
+            <param name="path">Ruta del archivo a crear. Si existe se sobrescribe.</param>
+            <param name="error">Cadena con la descripción del error que hubo al convertir el arreglo de bytes (Si lo hubo).</param>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ByteToImage(System.Byte[])">
+            <summary>
+            Convierte un arreglo de bytes a un objeto del tipo Image
+            </summary>
+            <remarks>
+            Es la operación inversa a ImageToByte.
+            </remarks>
+            <param name="bytes">Arreglo de bytes a convertir.</param>
+            <returns>objeto del tipo Image que representa el arreglo de bytes</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ImageToByte(System.Drawing.Image)">
+            <summary>
+            Convierte un objeto del tipo Image a un arreglo de bytes
+            </summary>
+            <param name="img">Objeto a convertir</param>
+            <returns>Arreglo de bytes que representa el objeto Image convertido.</returns>
+        </member>
+        <member name="T:ITD.Funciones.FuncGen.MAYUSCULAS">
+            <summary>
+            Enumerado usado en la función NumeroALetras para indicar como se quiere la cadena.
+            </summary>
+        </member>
+        <member name="F:ITD.Funciones.FuncGen.MAYUSCULAS.Mayuscula">
+            <summary>
+            Todo el texto estará en mayúsculas.
+            </summary>
+        </member>
+        <member name="F:ITD.Funciones.FuncGen.MAYUSCULAS.Minuscula">
+            <summary>
+            Todo el texto estará en minúsculas.
+            </summary>
+        </member>
+        <member name="F:ITD.Funciones.FuncGen.MAYUSCULAS.TipoTitulo">
+            <summary>
+            Solo la primera letra de cada palabra estará en mayusculas.
+            </summary>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.NumeroALetras(System.Int64,ITD.Funciones.FuncGen.MAYUSCULAS)">
+            <summary>
+            Convierte un número entero a una cadena que representa al mismo número pero en su forma escrita.
+            </summary>
+            <param name="Numero">Numero a convertir.</param>
+            <param name="TipoLetra">Indica como se quiere ver la cadena.</param>
+            <returns>La representación en cadena del número</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.DataViewAString(System.Data.DataView,System.String,System.String)">
+            <summary>
+            Genera en una cadena los datos contenidos en un DataView
+            </summary>
+            <param name="dvVista">Es el DataView que contiene los datos.</param>
+            <param name="strFormatoLinea">Especifica como se construirá la linea. Esta usa la misma sintaxis que el metodo string.Format donde cada columa del dataview es un parametro.</param>
+            <param name="strFormatoTitulo">Especifica como se construirá la linea de titulos de la misma manera que la linea de datos, en donde se pondrá el nombre de cada colum,na del dataview. Si es una cadena vacia entonces no pondrá una fila de titulo.</param>
+            <returns>Cadena que representa los datos del DataView.</returns>
+            <example>
+            <code>
+            string tmp = DataViewAString(vistaDatos, "{0},{1:dd/MM/yyyy},{2:d}","{0},{1},{2}");
+            </code>
+            </example>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.DataViewAArchivo(System.Data.DataView,System.String,System.String,System.String)">
+            <summary>
+            Genera un archivo de tipo Texto con los datos contenidos en un dataview
+            </summary>
+            <param name="dvVista">Es el DataView que contiene los datos.</param>
+            <param name="strRutaArchivo">Ruta del archivo a crear. Si el archivo existe, entonces será sobrescrito.</param>
+            <param name="strFormatoLinea">Especifica como se construirá la linea. Esta usa la misma sintaxis que el metodo string.Format donde cada columa del dataview es un parametro.</param>
+            <param name="strFormatoTitulo">Especifica como se construirá la linea de titulos de la misma manera que la linea de datos, en donde se pondrá el nombre de cada colum,na del dataview. Si es una cadena vacia entonces no pondrá una fila de titulo.</param>
+            <returns>Exepción que se produjo por algun error. Si no hay ningun error en la ejecución devuelve nulo.</returns>
+            <example>
+            <code>
+            Exception tmp = DataViewAArchivo(vistaDatos, "C:\Temp\Archivo.txt", "{0},{1:dd/MM/yyyy},{2:d}","{0},{1},{2}");
+            if(tmp != null)
+              MessageBox.Show(tmp.Message, "Error");
+            </code>
+            </example>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.DataReaderAString(System.Data.IDataReader,System.String,System.String)">
+            <summary>
+            Genera en una cadena los datos que apunta un IDataReader 
+            </summary>
+            <param name="drDatos">IDataReader que contiene los datos.</param>
+            <param name="strFormatoLinea">Especifica como se construirá la linea. Esta usa la misma sintaxis que el metodo string.Format donde cada columa del dataview es un parametro.</param>
+            <param name="strFormatoTitulo">Especifica como se construirá la linea de titulos de la misma manera que la linea de datos, en donde se pondrá el nombre de cada colum,na del dataview. Si es una cadena vacia entonces no pondrá una fila de titulo.</param>
+            <returns>Cadena que representa los datos del DataView.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.DataReaderAArchivo(System.Data.IDataReader,System.String,System.String,System.String)">
+            <summary>
+            Genera un archivo de tipo Texto con los datos contenidos en un IDataReader
+            </summary>
+            <param name="drDatos">IDataReader que contiene los datos.</param>
+            <param name="strRutaArchivo">Ruta del archivo a crear. Si el archivo existe, entonces será sobrescrito.</param>
+            <param name="strFormatoLinea">Especifica como se construirá la linea. Esta usa la misma sintaxis que el metodo string.Format donde cada columa del dataview es un parametro.</param>
+            <param name="strFormatoTitulo">Especifica como se construirá la linea de titulos de la misma manera que la linea de datos, en donde se pondrá el nombre de cada colum,na del dataview. Si es una cadena vacia entonces no pondrá una fila de titulo.</param>
+            <returns>Exepción que se produjo por algun error. Si no hay ningun error en la ejecución devuelve nulo.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ContarFilasDeArchivo(System.String)">
+            <summary>
+            Cuenta la cantidad de filas que tiene un archivo de texto.
+            </summary>
+            <param name="strRuta">Ruta del archivo a contar las filas.</param>
+            <returns>Cantidad de filas que tiene el archivo.</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.EsUrlValida(System.String)">
+            <summary>
+            Valida si una cadena representa una dirección Url http válida.
+            </summary>
+            <param name="url">cadena a validar</param>
+            <returns>Retorna True si es un Url válido</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.ObtenerArchivos(System.String)">
+            <summary>
+            Retorna una lista de FileInfo de una carpeta especificada, si existe, sino existe devuelve una lista vacia.
+            </summary>
+            <param name="CarpetaRuta">Carpeta que se quiere obtener la lista de archivos existente.</param>
+            <returns>Lista de FileInfo</returns>
+        </member>
+        <member name="M:ITD.Funciones.FuncGen.DataTableADBF(System.Data.DataTable,System.String,System.Data.OleDb.OleDbRowUpdatedEventHandler)">
+            <summary>
+            Genera una archivo DBF con los datos contenidos en un DataTable
+            </summary>
+            <param name="dtTabla">Es el DataTable que contiene los datos</param>
+            <param name="strRutaArchivo">Ruta del archivo a crear. Si el archivo existe, entonces será sobrescrito.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ITD.Funciones.LongEncript">
+            <summary>
+            Clase estática que encripta un texto bajo una llave. El proceso de encriptación usado en esta clase es irreversible.
+            <remarks>
+            Comunmente es usado esta clase para encriptar contraseñas.
+            Este metodo de encriptación es sensitivo.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:ITD.Funciones.LongEncript.Encriptar(System.String,System.String)">
+            <summary>
+            Encripta una cadena con bajo una llave y devuelve un número que representa la cadena ecnriptada.
+            </summary>
+            <param name="User">Llave usada para encriptar.</param>
+            <param name="Pass">Cadena a encriptar.</param>
+            <returns>Número que representa la cadena encriptada.</returns>
+        </member>
+        <member name="M:ITD.Funciones.LongEncript.Validar(System.String,System.String,System.UInt32)">
+            <summary>
+            Valida que un numero representa a una cadena encriptada dada una llave.
+            </summary>
+            <param name="User">Llave usada para encriptar.</param>
+            <param name="Pass">Cadena que se quiere validar.</param>
+            <param name="Value">Valor de la cadena encriptada.</param>
+            <returns>Retorna True si la cadena Pass corresponde al valor Value dada la llave User</returns>
+        </member>
+        <member name="T:ITD.Funciones.TextEncryp">
+            <summary>
+            Clase que encripta un texto. El proceso de encriptación usado en esta clase es reversible.
+            <remarks>
+            Comunmente es usado esta clase para encriptar cadenas de conexión.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:ITD.Funciones.TextEncryp.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la clase TextEncryp.
+            </summary>
+        </member>
+        <member name="M:ITD.Funciones.TextEncryp.Encriptar(System.String)">
+            <summary>
+            Encripta una cadena. 
+            </summary>
+            <param name="plaintext">Cadena a encriptar.</param>
+            <returns>Cadena encriptada</returns>
+        </member>
+        <member name="M:ITD.Funciones.TextEncryp.Desencriptar(System.String)">
+            <summary>
+            Desencripta una cadena encriptada.
+            </summary>
+            <param name="ciphertext">Cadena encriptada.</param>
+            <returns>Cadena desencriptada.</returns>
+        </member>
+    </members>
+</doc>

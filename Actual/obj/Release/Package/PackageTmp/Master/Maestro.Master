@@ -1,0 +1,791 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestro.master.cs" Inherits="WEB.Maestro" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../AdminLte/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/fontawesome-free/css/all.min.css"  />
+    <link rel="stylesheet" href="../AdminLte/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/jqvmap/jqvmap.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/toastr/toastr.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/summernote/summernote-bs4.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" />
+    <%--<link rel="stylesheet" href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />--%>
+    
+    
+    <link rel="stylesheet" href="../AdminLte/plugins/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="../AdminLte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min" />
+ 
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(2.25rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            box-shadow: inset 0 0 0 transparent;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        .select2-container--default .select2-selection--single {
+            border: 1px solid #ced4da;
+            padding: .46875rem .75rem;
+            height: calc(2.25rem + 2px);
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #007bff;
+            border-color: #006fe6;
+            color: #fff;
+            padding: 0 10px;
+            margin-top: .31rem;
+        }
+    </style>
+
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+
+    </script>
+    
+    <!-- jQuery -->
+    <script src="../AdminLte/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../AdminLte/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="../AdminLte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="../AdminLte/plugins/moment/moment.min.js"></script>
+    <script src="../AdminLte/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../AdminLte/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="../AdminLte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../AdminLte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="../AdminLte/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <%--<script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>--%>
+    <!-- AdminLTE App -->
+    <script src="../AdminLte/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../AdminLte/dist/js/demo.js"></script>
+    <script src="../AdminLte/plugins/jquery-validation/jquery.validate.min.js""></script>
+    <script src="../AdminLte/plugins/toastr/toastr.min.js""></script>
+    <script src="../AdminLte/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../AdminLte/plugins/jquery-validation/additional-methods.min.js""></script>
+    <script src="../AdminLte/plugins/select2/js/select2.full.min.js"></script>
+    <script src="../AdminLte/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    
+     <script type="text/javascript">
+         var nowDate = new Date();
+         var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+         $(function () {
+             $("#<%= txtRangoFechaDes.ClientID %>").daterangepicker({
+                 "locale": {
+                     "format": "DD/MM/YYYY",
+                     "separator": " - ",
+                     "applyLabel": "Aceptar",
+                     "cancelLabel": "Cancelar",
+                     "fromLabel": "From",
+                     "toLabel": "To",
+                     "customRangeLabel": "Custom",
+                     "daysOfWeek": [
+                         "Do",
+                         "Lu",
+                         "Ma",
+                         "Mi",
+                         "Ju",
+                         "Vi",
+                         "Sa"
+                     ],
+                     "monthNames": [
+                         "Enero",
+                         "Febrero",
+                         "Marzo",
+                         "Abril",
+                         "Mayo",
+                         "Junio",
+                         "Julio",
+                         "Agosto",
+                         "Septiembre",
+                         "Octubre",
+                         "Noviembre",
+                         "Diciembre"
+                     ],
+                     "firstDay": 1,
+                     "mindate": today
+                 }
+             })
+             $("#<%= txtRangoFechas.ClientID %>").daterangepicker({
+                 "locale": {
+                     "format": "DD/MM/YYYY",
+                     "separator": " - ",
+                     "applyLabel": "Aceptar",
+                     "cancelLabel": "Cancelar",
+                     "fromLabel": "From",
+                     "toLabel": "To",
+                     "customRangeLabel": "Custom",
+                     "daysOfWeek": [
+                         "Do",
+                         "Lu",
+                         "Ma",
+                         "Mi",
+                         "Ju",
+                         "Vi",
+                         "Sa"
+                     ],
+                     "monthNames": [
+                         "Enero",
+                         "Febrero",
+                         "Marzo",
+                         "Abril",
+                         "Mayo",
+                         "Junio",
+                         "Julio",
+                         "Agosto",
+                         "Septiembre",
+                         "Octubre",
+                         "Noviembre",
+                         "Diciembre"
+                     ],
+                     "firstDay": 1,
+                     "mindate": today
+                 }
+             })
+             $('.select2').select2()
+
+             $("#<%= txtRangoFechaAvance.ClientID %>").daterangepicker({
+                 "locale": {
+                     "format": "DD/MM/YYYY",
+                     "separator": " - ",
+                     "applyLabel": "Aceptar",
+                     "cancelLabel": "Cancelar",
+                     "fromLabel": "From",
+                     "toLabel": "To",
+                     "customRangeLabel": "Custom",
+                     "daysOfWeek": [
+                         "Do",
+                         "Lu",
+                         "Ma",
+                         "Mi",
+                         "Ju",
+                         "Vi",
+                         "Sa"
+                     ],
+                     "monthNames": [
+                         "Enero",
+                         "Febrero",
+                         "Marzo",
+                         "Abril",
+                         "Mayo",
+                         "Junio",
+                         "Julio",
+                         "Agosto",
+                         "Septiembre",
+                         "Octubre",
+                         "Noviembre",
+                         "Diciembre"
+                     ],
+                     "firstDay": 1,
+                     "mindate": today
+                 }
+             })
+         })
+
+
+    </script>
+    <%--<script src="../AdminLte/dist/js/adminlte.min.js"></script>
+    <script src="../AdminLte/dist/js/demo.js"></script>
+    <script src="../AdminLte/dist/js/pages/dashboard.js"></script>
+    <script src="../AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../AdminLte/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../AdminLte/plugins/chart.js/Chart.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../AdminLte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../AdminLte/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../AdminLte/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../AdminLte/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="../AdminLte/plugins/jquery/jquery.min.js"></script>
+    <script src="../AdminLte/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../AdminLte/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="../AdminLte/plugins/moment/moment.min.js"></script>
+    <script src="../AdminLte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="../AdminLte/plugins/sparklines/sparkline.js"></script>
+    <script src="../AdminLte/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="../AdminLte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>--%>
+
+</head>
+<body class="sidebar-mini">
+
+
+
+
+    <form role="form" runat="server">
+
+
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="../Inicial/Forma.aspx" class="nav-link">Inicio</a>
+                    </li>
+                    <%--      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>--%>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <asp:LinkButton ID="lnkSalir" runat="server" CssClass="nav-link" OnClick="lnkSalir_Click">Salir</asp:LinkButton>
+                    </li>
+                    <%--      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>--%>
+                </ul>
+
+            </nav>
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="../Inicial/Forma.aspx" class="brand-link">
+                    <img src="../Resources/logo-Blanco.png" width="200" height="60" alt="Beneo"
+                        style="opacity: .8">
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="../AdminLte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">
+                                <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label></a>
+
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                            <li class="nav-item has-treeview" id="liConf" runat="server">
+                                <a href="#" class="nav-link" id="mniConf" runat="server">
+                                    <i class="nav-icon fas fa-cog"></i>
+                                    <p>
+                                        Configuración
+                <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Temporada.aspx" class="nav-link" id="mniTemporada" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Temporada</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/CategoriaProducto.aspx" class="nav-link" id="mniCategoriaProducto" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Categoria de Producto</p>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Producto.aspx" class="nav-link" id="mniProducto" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Producto</p>
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Herramientas.aspx" class="nav-link" id="mniHerramientas" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Herramientas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/CategoriaHerramienta.aspx" class="nav-link" id="mniCategoriaHerramienta" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Categoria de Herramientas</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/UnidadMedida.aspx" class="nav-link" id="mniUniMed" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Unidad de Medida</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Lugar.aspx" class="nav-link" id="mniLugar" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Lugar</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Especie.aspx" class="nav-link" id="mniEspecie" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Especie</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Ensayo.aspx" class="nav-link" id="mniEnsayo" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ensayo</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Actividad.aspx" class="nav-link" id="mniActividad" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Actividades</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Bodegas.aspx" class="nav-link" id="mniBodega" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Bodegas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Usuario.aspx" class="nav-link" id="mniUsuario" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Usuarios</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="../Configuracion/Configuracion.aspx" class="nav-link" id="mniConfiguracion" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Configuración</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview" id="liProgra" runat="server">
+                                <a href="#" class="nav-link" id="mniProgra" runat="server">
+                                    <i class="nav-icon fas fa-clock"></i>
+                                    <p>
+                                        Programación
+                <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/Programacion.aspx" class="nav-link" id="mniProgramacionNew" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Por Ensayo</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/ProgramacionMas.aspx" class="nav-link" id="mniProgramacionMas" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Masiva</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" id="A1" runat="server" data-toggle="modal" data-target="#modal-default-rpt">
+                                            <i class="far fa-calculator nav-icon"></i>
+                                            <p>Informe de Programación</p>
+                                        </a>
+                                    </li>
+                                </ul>
+<%--                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/Asignacion.aspx" class="nav-link" id="mniAsignacion" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Asignación</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/NuevaAsignacion.aspx" class="nav-link" id="A3" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>NuevaAsignación</p>
+                                        </a>
+                                    </li>
+                                </ul>--%>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/RegistroActividad.aspx" class="nav-link" id="mniRegistroActividad" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Registro Actividad</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" id="A2" runat="server" data-toggle="modal" data-target="#modal-default-dia">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Reporte Avance</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" id="A4" runat="server" data-toggle="modal" data-target="#modal-default2-rpt">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Reporte Estado Actividad</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview" id="liConsulta" runat="server">
+                                <a href="#" class="nav-link" id="mniConsulta" runat="server">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Consulta
+                <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/ProgramacionCons.aspx" class="nav-link" id="mniProgramacion" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ensayos Programados</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Programacion/PrograActividadesCons.aspx" class="nav-link" id="mniPrograAct" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Actividades Programadas</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="~/Inventario/RecepcionCons.aspx" class="nav-link" id="mniRecepCons" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Productos Ingresados</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="nav-item has-treeview" id="liInventario" runat="server">
+                                <a href="#" class="nav-link" id="mniInventario" runat="server">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Inventario
+                <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="~/Inventario/RecepcionAct.aspx" class="nav-link" id="mniRecepcionAct" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ingreso de Productos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Inventario/Stock.aspx" class="nav-link" id="mniStock" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Stock</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Inventario/MovimientoCons.aspx" class="nav-link" id="mniMovimiento" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Movimientos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Inventario/MermaCons.aspx" class="nav-link" id="mniMerma" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Mermas</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview" id="liHallazgos" runat="server">
+                                <a href="#" class="nav-link" id="mniHallazgos" runat="server">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Hallazgos
+                <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../Hallazgos/AsuntoHallazgo.aspx" class="nav-link" id="mniAsuntoH" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Asunto Hallazgos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" id="A5" runat="server" data-toggle="modal" data-target="#modal-default3-rpt">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Informe Producto Actividad</p>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+            <div class="content-wrapper">
+
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+
+
+                            <asp:ContentPlaceHolder ID="head" runat="server">
+                            </asp:ContentPlaceHolder>
+
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+
+                <section class="content">
+
+                    <div class="container-fluid">
+
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                        <div class="modal fade" id="modal-info" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-info">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">
+                                            <asp:Label ID="lblTituloInf" runat="server" Text="Label"></asp:Label></h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <asp:Label ID="lblTextoInf" runat="server" Text="Label"></asp:Label>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                                        <%--<button type="button" class="btn btn-outline-light">Save changes</button>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modal-danger" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-danger">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">
+                                            <asp:Label ID="lblTituloError" runat="server" Text="lblTituloError"></asp:Label></h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <asp:Label ID="lblTextoError" runat="server" Text="Label"></asp:Label>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                                        <%--<button type="button" class="btn btn-outline-light">Save changes</button>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modal-warning" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-warning">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">
+                                            <asp:Label ID="lblTituloConf" runat="server" Text="lblTituloError"></asp:Label></h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <asp:Label ID="lblTextoConf" runat="server" Text="Label"></asp:Label>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                                        <%--<button type="button" class="btn btn-outline-light">Save changes</button>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="modal-default-rpt" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Seleccione el rango de fechas</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <asp:TextBox ID="txtRangoFechaDes" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="btnDescargarExcel" runat="server" CssClas="btn btn-primary" Text="Descargar" OnClick="btnDescargarExcel_Click" />
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                        <div class="modal fade" id="modal-default2-rpt" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Seleccione el rango de fechas</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <asp:TextBox ID="txtRangoFechas" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="btnDescargarExcel2" runat="server" CssClas="btn btn-primary" Text="Descargar" OnClick="btnDescargarExcel2_Click" />
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                        <div class="modal fade" id="modal-default3-rpt" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Informe Producto Actividad</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="Button1" runat="server" CssClas="btn btn-primary" Text="Descargar" OnClick="btnDescargarExcel3_Click" />
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                        <div class="modal fade" id="modal-default-dia" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Seleccione el rango de fechas </h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <asp:TextBox ID="txtRangoFechaAvance" runat="server" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="btnDescargarDiaRep" runat="server" CssClas="btn btn-primary" Text="Descargar" OnClick="btnDescargarDiaRep_Click" />
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+
+            <footer class="main-footer">
+                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+                All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.0.5
+    </div>
+            </footer>
+
+        </div>
+
+
+
+    </form>
+
+
+
+
+
+</body>
+</html>

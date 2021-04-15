@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Deploy\Beneo</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Actividad.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/config/postcss.config.js">
+      <publishTime>01/14/2021 01:07:03</publishTime>
+    </File>
+    <File Include="AdminLte/build/config/rollup.config.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/.jscsrc">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/AdminLTE.js">
+      <publishTime>01/14/2021 01:10:56</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/CardRefresh.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/CardWidget.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/ControlSidebar.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/DirectChat.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/Dropdown.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/Layout.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/PushMenu.js">
+      <publishTime>01/14/2021 01:07:19</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/SiteSearch.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/Toasts.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/TodoList.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/js/Treeview.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/npm/DocsPlugins.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/npm/DocsPublish.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/npm/Plugins.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/npm/Publish.js">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/.csslintrc">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-components.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-core.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-extra-components.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-pages.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-plugins.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE-raw.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/AdminLTE.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_accent.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_backgrounds.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_cards.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_custom-forms.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_direct-chat.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_miscellaneous.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_navbar.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_sidebar.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/mixins/_toasts.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_404_500_errors.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_e-commerce.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_invoice.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_lockscreen.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_login_and_register.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_mailbox.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_profile.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/pages/_projects.scss">
+      <publishTime>01/14/2021 01:08:12</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_components.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_core.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_extra-components.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_miscellaneous.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_pages.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/parts/_plugins.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_bootstrap-slider.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_bootstrap-switch.scss">
+      <publishTime>01/14/2021 01:08:24</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_fullcalendar.scss">
+      <publishTime>01/14/2021 01:08:25</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_icheck-bootstrap.scss">
+      <publishTime>01/14/2021 01:08:25</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_jqvmap.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_mapael.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_miscellaneous.scss">
+      <publishTime>01/14/2021 01:08:28</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_mixins.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_pace.scss">
+      <publishTime>01/14/2021 01:08:28</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_select2.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_sweetalert2.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/plugins/_toastr.scss">
+      <publishTime>01/14/2021 01:08:27</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_alerts.scss">
+      <publishTime>01/14/2021 01:07:42</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_bootstrap-variables.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_brand.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_buttons.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_callout.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_cards.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_carousel.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_colors.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_control-sidebar.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_direct-chat.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_dropdown.scss">
+      <publishTime>01/14/2021 01:07:46</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_elevation.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_forms.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_info-box.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_layout.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_main-header.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_main-sidebar.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_miscellaneous.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_mixins.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_modals.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_navs.scss">
+      <publishTime>01/14/2021 01:07:47</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_print.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_products.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_progress-bars.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_sidebar-mini.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_small-box.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_social-widgets.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_table.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_text.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_timeline.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_toasts.scss">
+      <publishTime>01/14/2021 01:07:59</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_users-list.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/build/scss/_variables.scss">
+      <publishTime>01/14/2021 01:08:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/adminlte.css">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/adminlte.css.map">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/adminlte.min.css">
+      <publishTime>03/04/2021 03:47:01</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/adminlte.min.css.map">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.components.css">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.components.css.map">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.components.min.css">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.components.min.css.map">
+      <publishTime>01/14/2021 01:08:36</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.core.css">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.core.css.map">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.core.min.css">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.core.min.css.map">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.extra-components.css">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.extra-components.css.map">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.extra-components.min.css">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.extra-components.min.css.map">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.pages.css">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.pages.css.map">
+      <publishTime>01/14/2021 01:08:41</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.pages.min.css">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.pages.min.css.map">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.plugins.css">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.plugins.css.map">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.plugins.min.css">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/css/alt/adminlte.plugins.min.css.map">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/AdminLTELogo.png">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/avatar.png">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/avatar04.png">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/avatar2.png">
+      <publishTime>01/14/2021 01:08:43</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/avatar3.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/avatar5.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/boxed-bg.jpg">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/boxed-bg.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/american-express.png">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/cirrus.png">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/mastercard.png">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/mestro.png">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/paypal.png">
+      <publishTime>01/14/2021 01:09:01</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/paypal2.png">
+      <publishTime>01/14/2021 01:09:01</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/credit/visa.png">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/default-150x150.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/icons.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/photo1.png">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/photo2.png">
+      <publishTime>01/14/2021 01:08:54</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/photo3.jpg">
+      <publishTime>01/14/2021 01:08:53</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/photo4.jpg">
+      <publishTime>01/14/2021 01:08:58</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/prod-1.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/prod-2.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/prod-3.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/prod-4.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/prod-5.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user1-128x128.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user2-160x160.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user3-128x128.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user4-128x128.jpg">
+      <publishTime>01/14/2021 01:08:57</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user5-128x128.jpg">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user6-128x128.jpg">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user7-128x128.jpg">
+      <publishTime>01/14/2021 01:09:00</publishTime>
+    </File>
+    <File Include="AdminLte/dist/img/user8-128x128.jpg">
+      <publishTime>01/14/2021 01:09:01</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/adminlte.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/adminlte.js.map">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/adminlte.min.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/adminlte.min.js.map">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/demo.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/pages/dashboard.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/pages/dashboard2.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/dist/js/pages/dashboard3.js">
+      <publishTime>01/14/2021 01:09:09</publishTime>
+    </File>
+    <File Include="AdminLte/plugins/.npmignore">
+      <publishTime>01/14/2021 01:09:17</publishTime>
+    </File>
+    <File Include="AdminLte/plugins/select2/_select2.scss">
+      <publishTime>01/14/2021 01:09:17</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/13/2021 17:47:24</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.FriendlyUrls.resources.dll">
+      <publishTime>07/30/2013 17:01:46</publishTime>
+    </File>
+    <File Include="bin/ITD.AccDatos.dll">
+      <publishTime>01/13/2021 17:47:23</publishTime>
+    </File>
+    <File Include="bin/ITD.Funciones.dll">
+      <publishTime>01/13/2021 17:47:23</publishTime>
+    </File>
+    <File Include="bin/ITD.Log.dll">
+      <publishTime>01/13/2021 17:47:23</publishTime>
+    </File>
+    <File Include="bin/ITD.WcfComun.dll">
+      <publishTime>01/13/2021 17:47:23</publishTime>
+    </File>
+    <File Include="bin/ITD.Web.dll">
+      <publishTime>01/13/2021 17:47:23</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>01/13/2021 17:47:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/07/2015 19:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 14:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 12:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>07/30/2013 15:57:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>02/20/2011 04:40:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
+      <publishTime>02/20/2011 04:40:08</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>01/13/2021 17:47:24</publishTime>
+    </File>
+    <File Include="bin/Npgsql.dll">
+      <publishTime>01/13/2021 17:47:24</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/27/2012 13:00:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/WEB.dll">
+      <publishTime>03/04/2021 07:31:37</publishTime>
+    </File>
+    <File Include="Configuracion/Actividad.aspx">
+      <publishTime>03/04/2021 05:26:07</publishTime>
+    </File>
+    <File Include="Configuracion/Bodegas.aspx">
+      <publishTime>01/14/2021 01:09:17</publishTime>
+    </File>
+    <File Include="Configuracion/Campex.aspx">
+      <publishTime>09/04/2020 05:42:24</publishTime>
+    </File>
+    <File Include="Configuracion/CategoriaHerramienta.aspx">
+      <publishTime>02/10/2021 08:10:34</publishTime>
+    </File>
+    <File Include="Configuracion/CategoriaProducto.aspx">
+      <publishTime>01/14/2021 01:09:21</publishTime>
+    </File>
+    <File Include="Configuracion/Configuracion.aspx">
+      <publishTime>01/14/2021 01:09:21</publishTime>
+    </File>
+    <File Include="Configuracion/Ensayo.aspx">
+      <publishTime>01/14/2021 01:09:21</publishTime>
+    </File>
+    <File Include="Configuracion/EnsayoClonar.aspx">
+      <publishTime>01/14/2021 01:09:22</publishTime>
+    </File>
+    <File Include="Configuracion/EnsayoFecha.aspx">
+      <publishTime>01/14/2021 01:09:23</publishTime>
+    </File>
+    <File Include="Configuracion/EnsayoFechaClon.aspx">
+      <publishTime>01/14/2021 01:09:23</publishTime>
+    </File>
+    <File Include="Configuracion/Especie.aspx">
+      <publishTime>01/14/2021 01:09:23</publishTime>
+    </File>
+    <File Include="Configuracion/Herramientas.aspx">
+      <publishTime>03/04/2021 05:40:36</publishTime>
+    </File>
+    <File Include="Configuracion/Lugar.aspx">
+      <publishTime>01/14/2021 01:09:23</publishTime>
+    </File>
+    <File Include="Configuracion/Producto.aspx">
+      <publishTime>01/27/2021 02:05:53</publishTime>
+    </File>
+    <File Include="Configuracion/Temporada.aspx">
+      <publishTime>01/14/2021 01:09:23</publishTime>
+    </File>
+    <File Include="Configuracion/Tratamiento.aspx">
+      <publishTime>01/14/2021 01:09:29</publishTime>
+    </File>
+    <File Include="Configuracion/UnidadMedida.aspx">
+      <publishTime>02/03/2021 05:03:30</publishTime>
+    </File>
+    <File Include="Configuracion/Usuario.aspx">
+      <publishTime>01/14/2021 01:09:29</publishTime>
+    </File>
+    <File Include="CorreoRecuperarClave.html">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="Ensayo.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Forma.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="General/VisorReporte.aspx">
+      <publishTime>01/14/2021 01:09:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="Hallazgos/AsuntoHallazgo.aspx">
+      <publishTime>01/25/2021 15:30:29</publishTime>
+    </File>
+    <File Include="Inicial/Forma.aspx">
+      <publishTime>03/04/2021 03:33:18</publishTime>
+    </File>
+    <File Include="Inventario/MermaCons.aspx">
+      <publishTime>02/10/2021 02:48:42</publishTime>
+    </File>
+    <File Include="Inventario/MovimientoCons.aspx">
+      <publishTime>01/27/2021 04:24:51</publishTime>
+    </File>
+    <File Include="Inventario/RecepcionAct.aspx">
+      <publishTime>02/03/2021 03:01:58</publishTime>
+    </File>
+    <File Include="Inventario/RecepcionCons.aspx">
+      <publishTime>01/27/2021 08:50:37</publishTime>
+    </File>
+    <File Include="Inventario/RecepcionDetAct.aspx">
+      <publishTime>02/03/2021 02:59:23</publishTime>
+    </File>
+    <File Include="Inventario/Stock.aspx">
+      <publishTime>02/03/2021 06:14:12</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="Lugar.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Maestro.Master">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Master/Maestro.Master">
+      <publishTime>03/04/2021 07:27:29</publishTime>
+    </File>
+    <File Include="Master/Site.Mobile.Master">
+      <publishTime>01/14/2021 01:09:50</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/14/2021 01:06:59</publishTime>
+    </File>
+    <File Include="Programacion.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Programacion/Asignacion.aspx">
+      <publishTime>01/14/2021 01:09:50</publishTime>
+    </File>
+    <File Include="Programacion/IngresoActividad.aspx">
+      <publishTime>01/14/2021 01:09:52</publishTime>
+    </File>
+    <File Include="Programacion/NuevaAsignacion.aspx">
+      <publishTime>01/14/2021 01:09:52</publishTime>
+    </File>
+    <File Include="Programacion/PrograActividadesCons.aspx">
+      <publishTime>03/04/2021 06:50:07</publishTime>
+    </File>
+    <File Include="Programacion/Programacion.aspx">
+      <publishTime>01/12/2021 04:18:40</publishTime>
+    </File>
+    <File Include="Programacion/ProgramacionCons.aspx">
+      <publishTime>01/14/2021 01:10:08</publishTime>
+    </File>
+    <File Include="Programacion/ProgramacionMas.aspx">
+      <publishTime>02/10/2021 03:43:44</publishTime>
+    </File>
+    <File Include="Programacion/RegistroActividad.aspx">
+      <publishTime>02/19/2021 05:10:34</publishTime>
+    </File>
+    <File Include="Programacion/SubirArchivosRegAct.aspx">
+      <publishTime>01/14/2021 01:10:08</publishTime>
+    </File>
+    <File Include="RecuperarClave.aspx">
+      <publishTime>01/14/2021 01:07:03</publishTime>
+    </File>
+    <File Include="Reportes/DatosReportes.xsc">
+      <publishTime>03/04/2021 07:01:07</publishTime>
+    </File>
+    <File Include="Reportes/DatosReportes.xss">
+      <publishTime>03/04/2021 07:01:07</publishTime>
+    </File>
+    <File Include="Resources/Logo-Beneo.png">
+      <publishTime>01/14/2021 01:10:19</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>01/14/2021 01:10:19</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.4.4.js">
+      <publishTime>01/14/2021 01:10:23</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.4.4.min.js">
+      <publishTime>01/14/2021 01:10:23</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.autocomplete.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.autocomplete.min.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.core.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.core.min.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.position.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.position.min.js">
+      <publishTime>01/14/2021 01:10:20</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.widget.js">
+      <publishTime>01/14/2021 01:10:23</publishTime>
+    </File>
+    <File Include="scripts/jquery.ui.widget.min.js">
+      <publishTime>01/14/2021 01:10:23</publishTime>
+    </File>
+    <File Include="scripts/Merma.js">
+      <publishTime>02/03/2021 01:28:00</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>12/08/2020 20:51:20</publishTime>
+    </File>
+    <File Include="Usuario.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>01/14/2021 01:07:03</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/04/2021 07:32:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

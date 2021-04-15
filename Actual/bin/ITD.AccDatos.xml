@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITD.AccDatos</name>
+    </assembly>
+    <members>
+        <member name="T:ITD.AccDatos.IAccDato">
+            <summary>
+            Provee los metodos y funciones usados por la ITDlogía para el acceso a una fuente de datos cualquiera.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.IAccDato.CadenaConexion">
+            <summary>
+            Es la cadena de conección que usara el objeto para conectarse a la fuente de datos.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.IAccDato.LogPropio">
+            <summary>
+            Es el objeto que logueará los errores producidos. Por defecto es el log de la aplicación.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.IAccDato.Debug">
+            <summary>
+            Indica si el objeto de conexion esta en modo debug.
+            Si es true entonces se loguearán todos los errores. Si es falso se omitiran los errores personalizados de SQL.
+            </summary>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.TraerDataset(System.String,System.Object[],System.Int32,ITD.Log.ITDError@)">
+            <summary>
+            Trae un dataset desde una fuente de datos.
+            </summary>
+            <param name="strProc">Nombre del procedimiento almacenado</param>
+            <param name="parametros">Arreglo de parámetros a pasar al procedimiento almacenado.</param>
+            <param name="tiempoEspera">Tiempo que esperará la ejecución antes de dar un error del tipo TimeOut.</param>
+            <param name="objError">Informacion del error (de producirse). Si se ejecutó el procedimiento almacenado sin problemas devuelve nulo.</param>
+            <returns>Devuelve un DataSet con las tablas que devuelva el procedimiento almacenado.</returns>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.Ejecutar(System.String,System.Object[],System.Int32,ITD.Log.ITDError@)">
+            <summary>
+            Ejecuta un procedimiento almacenado de la fuente de datos.
+            </summary>
+            <param name="strProc">Nombre del procedimiento almacenado.</param>
+            <param name="parametros">Arreglo de parámetros a pasar al procedimiento almacenado.</param>
+            <param name="tiempoEspera">Tiempo que esperará la ejecución antes de dar una excepción del tipo TimeOut.</param>
+            <param name="objError">Informacion del error (de producirse). Si se ejecutó el procedimiento almacenado sin problemas devuelve nulo.</param>
+            <returns>Si el procedimiento almacenado se ejecutó con exito retorna True.</returns>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.TraerRetorno(System.String,System.Object[],System.Int32,ITD.Log.ITDError@)">
+            <summary>
+            Ejecuta un procedimiento almacenado de la fuente de datos y devuelve el valor de retorno de este.
+            </summary>
+            <param name="strProc">Nombre del procedimiento almacenado.</param>
+            <param name="parametros">Arreglo de parámetros a pasar al procedimiento almacenado.</param>
+            <param name="tiempoEspera">Tiempo que esperará la ejecución antes de dar una excepción del tipo TimeOut.</param>
+            <param name="objError">Informacion del error (de producirse). Si se ejecutó el procedimiento almacenado sin problemas devuelve nulo.</param>
+            <returns>El número de retorno del procedimiento almacenado. Si huvo algun error devuelve cero.</returns>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.TraerDataReader(System.String,System.Object[],System.Int32,ITD.Log.ITDError@)">
+            <summary>
+            Ejecuta un procedimiento almacenado de la fuente de datos y devuelve un objeto del tipo IDataReader que representa el resultado del procedimiento almacenado.
+            </summary>
+            <param name="strProc">Nombre del procedimiento almacenado.</param>
+            <param name="parametros">Arreglo de parámetros a pasar al procedimiento almacenado.</param>
+            <param name="tiempoEspera">Tiempo que esperará la ejecución antes de dar una excepción del tipo TimeOut.</param>
+            <param name="objError">Informacion del error (de producirse). Si se ejecutó el procedimiento almacenado sin problemas devuelve nulo.</param>
+            <returns>Devuelve el resultado de la ejecución del procedimiento almacenado en un objeto del tipo IDataReader</returns>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.LimpiarComandos">
+            <summary>
+            Limpia las variables de caché que tuviera el objeto de conección. Ademas, pone el Debug en true.
+            </summary>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.ActualizarMasivo(System.String,System.Collections.Generic.List{ITD.AccDatos.Registro},System.Boolean,System.Int32)">
+            <summary>
+            Para cada registro del parametro registro ejecuta un procedimiento almacenado con los parametros que este le proporciona.
+            </summary>
+            <remarks>
+            Los procedimientos almacenados a ejecutar son los procedimientos llamados con el nombre que entrega el parametro procPrefijo mas un sufijo que puede ser Ins, Upd o Del, indicado por el registro.
+            </remarks>
+            <param name="procPrefijo">Es el prefijo usado como nombre de los procedimientos almacenados a ejecutarse.</param>
+            <param name="registros">Es la lista de registros a actualizar en la fuente de datos.</param>
+            <param name="mantenerTransaccion">Si es verdadero, los procedimientos se ejecutarán en una transacción única, de haber algun error en algun procedimiento abortará el proceso y hara un RollBack.
+            Si es falso, los procedimientos se ejecutarán en transacciones independientes, de haber algun error en algun procedimiento seguirá ejecutando los procedimientos restantes.
+            </param>
+            <param name="tiempoEspera">Tiempo que esperará la ejecución de un procedimiento antes de dar una excepción del tipo TimeOut.</param>
+            <returns>Retornará la misma lista de registros dado, pero con los campos de error y y parámetros actualizados.</returns>
+        </member>
+        <member name="M:ITD.AccDatos.IAccDato.ValidaConexion(System.String,System.String,System.String,System.Object[],System.Int32,System.Data.DataSet@,ITD.Log.ITDError@)">
+            <summary>
+            
+            </summary>
+            <param name="procClave"></param>
+            <param name="procExito"></param>
+            <param name="procFracaso"></param>
+            <param name="parametros"></param>
+            <param name="tiempoEspera"></param>
+            <param name="ds"></param>
+            <param name="objError"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ITD.AccDatos.AccionReg">
+            <summary>
+            Indica el sufijo que pondrá al procedimiento alacenado a  ejecutar.
+            </summary>
+        </member>
+        <member name="F:ITD.AccDatos.AccionReg.Ins">
+            <summary>
+            Se usa en comunmente en procedimientos de inserción.
+            </summary>
+        </member>
+        <member name="F:ITD.AccDatos.AccionReg.Upd">
+            <summary>
+            Se usa comunmente en procedimientos de Actualización.
+            </summary>
+        </member>
+        <member name="F:ITD.AccDatos.AccionReg.Del">
+            <summary>
+            Se usa comunmente en procedimientos de Borrado.
+            </summary>
+        </member>
+        <member name="T:ITD.AccDatos.Registro">
+            <summary>
+            Esta clase contiene la información para la ejecución atómica de un procedimiento almacenado en una actualización masiva.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.Registro.Accion">
+            <summary>
+            Indica el tipo de acción a ejecutar. Esto indica el sufijo del procedimiento almacenado a ejecutar.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.Registro.Error">
+            <summary>
+            Indica el error que se produjo en una ejecución. Si esta propiedad no es nulo al momento de ejecutar el proceso de actualización masiva, entonces no ejecutara el procedimiento para este registro.
+            </summary>
+        </member>
+        <member name="P:ITD.AccDatos.Registro.Parametros">
+            <summary>
+            Es la lista de parámetros a usar por el procedimiento almacenado correspondiente.
+            </summary>
+        </member>
+    </members>
+</doc>
