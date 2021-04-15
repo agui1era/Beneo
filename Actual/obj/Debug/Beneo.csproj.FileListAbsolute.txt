@@ -55,3 +55,5 @@ D:\APP\Desarrollo\Clientes\Carlos Castillo\Beneo\Fuentes\Actual\bin\es\Microsoft
 D:\APP\Desarrollo\Clientes\Carlos Castillo\Beneo\Fuentes\Actual\obj\Debug\WEB.dll
 D:\APP\Desarrollo\Clientes\Carlos Castillo\Beneo\Fuentes\Actual\obj\Debug\WEB.pdb
 D:\APP\Desarrollo\Clientes\Carlos Castillo\Beneo\Fuentes\Actual\obj\Debug\Beneo.csprojResolveAssemblyReference.cache
+C:\Users\Oscar\OneDrive\Desktop\Beneo\Actual\obj\Debug\WEB.dll
+C:\Users\Oscar\OneDrive\Desktop\Beneo\Actual\obj\Debug\WEB.pdb
