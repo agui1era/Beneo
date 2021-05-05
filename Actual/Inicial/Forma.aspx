@@ -214,7 +214,7 @@
                     <p>Productos con bajo stock</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-scissors"></i>
+                    <i class="ion ion-android-cart"></i>
                 </div>
                 <asp:LinkButton ID="lnkProdAcabar" runat="server" CssClass="small-box-footer" Text="Más Información" OnClick="lnkProdAcabar_Click"  />
                 <%--<a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>--%>
